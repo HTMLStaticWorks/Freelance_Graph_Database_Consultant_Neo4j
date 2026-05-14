@@ -13,10 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initSidebar() {
     const toggleBtn = document.getElementById('sidebar-toggle');
+    const closeBtn = document.getElementById('sidebar-close');
     const sidebar = document.querySelector('.sidebar');
+    
     if (toggleBtn && sidebar) {
         toggleBtn.addEventListener('click', () => {
             sidebar.classList.toggle('active');
+        });
+    }
+
+    if (closeBtn && sidebar) {
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
         });
     }
 }

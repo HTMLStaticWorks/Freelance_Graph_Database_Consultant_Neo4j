@@ -8,6 +8,8 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
     
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +22,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-xl navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-diagram-3-fill"></i>
@@ -99,7 +101,7 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="glass-card h-100 p-0 overflow-hidden">
-                        <img src="assets/images/workflow-discovery.png" alt="Discovery & Schema" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
+                        <img src="assets/images/discovery.png" alt="Discovery & Schema" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
                         <div class="p-4">
                             <h4>Discovery & Schema</h4>
                             <p class="text-muted">Analyzing relationship density and defining node labels for optimal traversability across connected datasets.</p>
@@ -109,7 +111,7 @@
 
                 <div class="col-md-4">
                     <div class="glass-card h-100 p-0 overflow-hidden">
-                        <img src="assets/images/workflow-performance.png" alt="Performance Tuning" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
+                        <img src="assets/images/performance.png" alt="Performance Tuning" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
                         <div class="p-4">
                             <h4>Performance Tuning</h4>
                             <p class="text-muted">Optimization of cache sharding, heap management, and relationship traversal paths for millisecond latency.</p>
@@ -119,7 +121,7 @@
 
                 <div class="col-md-4">
                     <div class="glass-card h-100 p-0 overflow-hidden">
-                        <img src="assets/images/workflow-deployment.png" alt="Deployment & Scaling" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
+                        <img src="assets/images/deployment.png" alt="Deployment & Scaling" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
                         <div class="p-4">
                             <h4>Deployment & Scaling</h4>
                             <p class="text-muted">Orchestrating high-availability clusters and automated graph sharding for global enterprise scale.</p>
@@ -141,27 +143,79 @@
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="glass-card text-center">
-                        <div class="display-6 mb-2">99.8%</div>
+                        <div class="display-6 mb-2 counter" data-target="99.8" data-decimals="1" data-suffix="%">0</div>
                         <small class="text-muted">Accuracy Rating</small>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="glass-card text-center">
-                        <div class="display-6 mb-2">45ms</div>
+                        <div class="display-6 mb-2 counter" data-target="45" data-suffix="ms">0</div>
                         <small class="text-muted">Avg Latency</small>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="glass-card text-center">
-                        <div class="display-6 mb-2">10B+</div>
+                        <div class="display-6 mb-2 counter" data-target="10" data-suffix="B+">0</div>
                         <small class="text-muted">Nodes Scaled</small>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="glass-card text-center">
-                        <div class="display-6 mb-2">24/7</div>
+                        <div class="display-6 mb-2 counter" data-target="24" data-suffix="/7">0</div>
                         <small class="text-muted">Real-time Monitoring</small>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 1: Semantic Graph Architecture -->
+    <section class="section-padding reveal-on-scroll">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Semantic <span class="text-gradient">Knowledge Graph</span> Architecture</h2>
+                    <p class="text-muted mb-5 fs-5">Empowering Large Language Models with structural context. Our semantic layers bridge the gap between raw data and machine reasoning.</p>
+                    <div class="d-flex semantic-feature-item mb-4">
+                        <div class="feature-list-icon"><i class="bi bi-cpu"></i></div>
+                        <div>
+                            <h5>RAG Optimization</h5>
+                            <p class="small text-muted">Enhancing Retrieval-Augmented Generation with graph-based context retrieval.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex semantic-feature-item mb-4">
+                        <div class="feature-list-icon"><i class="bi bi-diagram-2"></i></div>
+                        <div>
+                            <h5>Entity Disambiguation</h5>
+                            <p class="small text-muted">Resolving complex relationship overlaps with sub-millisecond precision.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="floating-glass">
+                        <img src="assets/images/semantic-graph.png" alt="Semantic Graph" class="img-fluid rounded-5 shadow-lg border border-secondary" style="max-height: 500px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Section 2: Graph-Powered Fraud Intelligence -->
+    <section class="section-padding bg-secondary-bg reveal-on-scroll">
+        <div class="container">
+            <div class="overlap-grid">
+                <div class="overlap-image scanning-card">
+                    <img src="assets/images/fraud-intelligence.png" alt="Fraud Detection" class="img-fluid w-100 rounded-5">
+                </div>
+                <div class="glass-card overlap-card p-5">
+                    <h2 class="mb-4">Fraud <span class="text-gradient">Intelligence</span> Engine</h2>
+                    <p class="text-muted mb-4">Stop bad actors in their tracks by analyzing relationship patterns that traditional relational databases miss entirely.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 text-white"><i class="bi bi-shield-check text-emerald me-2"></i> Ring Detection Algorithms</li>
+                        <li class="mb-3 text-white"><i class="bi bi-broadcast text-teal me-2"></i> Real-time Transaction Scoring</li>
+                        <li class="text-white"><i class="bi bi-link-45deg text-blue me-2"></i> Identity Link Analysis</li>
+                    </ul>
+                    <a href="contact.html" class="btn-graph btn-primary-graph mt-4">Security Audit</a>
                 </div>
             </div>
         </div>
@@ -186,12 +240,12 @@
     <!-- Section 5: Enterprise Graph Success Stories -->
     <section class="section-padding bg-secondary-bg">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title reveal-on-scroll">
                 <h2>Enterprise <span class="text-gradient">Success Stories</span></h2>
             </div>
             <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="glass-card">
+                <div class="col-md-6 reveal-on-scroll stagger-1">
+                    <div class="glass-card success-story-card h-100">
                         <div class="d-flex justify-content-between mb-3">
                             <span class="badge bg-emerald">FinTech</span>
                             <span class="text-muted">2024</span>
@@ -200,8 +254,8 @@
                         <p class="text-muted">Implemented a real-time fraud detection engine for a global bank, reducing false positives by 65% through relationship analysis.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="glass-card">
+                <div class="col-md-6 reveal-on-scroll stagger-2">
+                    <div class="glass-card success-story-card h-100">
                         <div class="d-flex justify-content-between mb-3">
                             <span class="badge bg-teal">Retail</span>
                             <span class="text-muted">2023</span>

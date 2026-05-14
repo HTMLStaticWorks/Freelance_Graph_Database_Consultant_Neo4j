@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Graph Intelligence Case Studies</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -42,7 +44,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-xl navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-diagram-3-fill"></i>
@@ -79,37 +81,133 @@
         </div>
     </header>
 
-    <section class="pb-5">
+    <hr class="border-secondary opacity-25 m-0">
+
+    <!-- Case Study 1: Supply Chain Resilience (Split Layout) -->
+    <section class="section-padding">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="portfolio-item">
-                        <img src="assets/images/graph_network_hero.png" alt="Fraud Detection" class="portfolio-img">
-                        <div class="portfolio-overlay">
-                            <span class="badge bg-emerald mb-2">Finance</span>
-                            <p class="text-muted small">Detecting circular transfer patterns across 1M+ accounts.</p>
-                        </div>
-                    </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 reveal-on-scroll bounce-reveal">
+                    <img src="assets/images/scalable.png" alt="Supply Chain" class="img-fluid rounded-4 shadow-lg">
                 </div>
                 <div class="col-lg-6">
-                    <div class="portfolio-item">
-                        <img src="assets/images/knowledge_graph_visualization.png" alt="Supply Chain" class="portfolio-img">
-                        <div class="portfolio-overlay">
-                            <span class="badge bg-teal mb-2">Logistics</span>
-                            <p class="text-muted small">Mapping 50k+ components across global tiers for risk analysis.</p>
+                    <span class="badge bg-emerald mb-3">Logistics & Supply Chain</span>
+                    <h2 class="text-white mb-4">Global <span class="text-gradient">Supply Chain</span> Resilience</h2>
+                    <p class="text-muted mb-4">Mapped 1.2 million product components across 5 tiers of global suppliers for a Fortune 500 manufacturer. This comprehensive knowledge graph serves as a "Digital Twin" of the entire logistics network, enabling sub-second impact analysis during sudden geopolitical or environmental disruptions.</p>
+                    <p class="text-muted mb-4">By transitioning from static spreadsheets to a dynamic graph model, we uncovered hidden single-source dependencies that were previously invisible to traditional BI tools. The system now autonomously monitors global news feeds and weather patterns, automatically flagging at-risk nodes before they impact production.</p>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-muted small">
+                                <li class="mb-2"><i class="bi bi-shield-check text-emerald me-2"></i> Multi-tier Risk Scoring</li>
+                                <li class="mb-2"><i class="bi bi-search text-emerald me-2"></i> Bottleneck Identification</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled text-muted small">
+                                <li class="mb-2"><i class="bi bi-geo-alt text-emerald me-2"></i> Dynamic Re-routing</li>
+                                <li class="mb-2"><i class="bi bi-cpu text-emerald me-2"></i> Predictive Failure Models</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <h4 class="text-white mb-0">99.9%</h4>
+                            <small class="text-muted">Visibility Gap Closed</small>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="text-white mb-0">15min</h4>
+                            <small class="text-muted">Disruption Response</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="portfolio-item">
-                        <img src="assets/images/graph_monitoring_dashboard_3d.png" alt="Social Graph" class="portfolio-img" style="height: 250px;">
-                        <div class="portfolio-overlay">
-                            <span class="badge bg-blue mb-2">Social</span>
-                            <h5 class="text-white">Community Influence Engine</h5>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study 2: Financial AML (Full Width Dashboard Layout) -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-blue mb-3">Finance & FinTech</span>
+                <h2 class="text-white">Anti-Money Laundering <span class="text-gradient">Intelligence</span></h2>
+                <p class="text-muted mx-auto" style="max-width: 700px;">Developed a real-time anomaly detection engine using PageRank and Community Detection to flag synthetic identity clusters and circular transfer patterns.</p>
+            </div>
+            <div class="scan-container reveal-on-scroll">
+                <div class="scan-line"></div>
+                <img src="assets/images/fraud-intelligence.png" alt="Fraud Detection Dashboard" class="img-fluid rounded-4 w-100" style="max-height: 500px; object-fit: cover;">
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="glass-card text-center h-100">
+                        <h3 class="text-emerald">$45M</h3>
+                        <p class="text-muted small mb-0">Fraud Prevented Annually</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card text-center h-100">
+                        <h3 class="text-emerald">0.8ms</h3>
+                        <p class="text-muted small mb-0">Detection Latency</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glass-card text-center h-100">
+                        <h3 class="text-emerald">92%</h3>
+                        <p class="text-muted small mb-0">True Positive Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study 3: Real-time Personalization (Reversed Layout) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5 align-items-center flex-row-reverse">
+                <div class="col-lg-6 reveal-on-scroll bounce-reveal">
+                    <img src="assets/images/collaborative.png" alt="Recommendation Engine" class="img-fluid rounded-4 shadow-lg pulse-glow">
+                </div>
+                <div class="col-lg-6">
+                    <span class="badge bg-teal mb-3">E-Commerce & Retail</span>
+                    <h2 class="text-white mb-4">Real-time <span class="text-gradient">Customer</span> Intelligence</h2>
+                    <p class="text-muted mb-4">Architected a high-performance collaborative filtering graph for a Tier-1 global retailer, enabling sub-second personalized product recommendations based on concurrent user sessions and multi-dimensional historical affinity maps.</p>
+                    <p class="text-muted mb-4">By transitioning from traditional relational queries to a native Neo4j architecture, we eliminated the recursive multi-join bottlenecks that previously throttled recommendation latency during peak traffic. The system now autonomously traverses billions of purchase relationships in milliseconds to deliver hyper-relevant suggestions.</p>
+                    <ul class="list-unstyled text-muted mb-4">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-emerald me-2"></i> <strong>Hybrid Search:</strong> Seamlessly integrated Vector Embeddings with Graph topology for semantic matching.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-emerald me-2"></i> <strong>Cold-start Solved:</strong> Utilized neighborhood similarity algorithms to recommend products for new users with zero history.</li>
+                        <li><i class="bi bi-check-circle-fill text-emerald me-2"></i> <strong>Dynamic Re-ranking:</strong> Implemented real-time re-ranking engines that adapt to in-session clickstream data.</li>
+                    </ul>
+                    <div class="glass-card d-inline-block px-4 py-3 border-emerald">
+                        <span class="text-white">Business Impact:</span> <span class="text-emerald fw-bold">+24% Conversion Rate Increase</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study 4: Knowledge Graph Governance (Radial Layout) -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <span class="badge bg-orange mb-3">Enterprise Data</span>
+                    <h2 class="text-white mb-4">Enterprise <span class="text-gradient">Knowledge</span> Governance</h2>
+                    <p class="text-muted mb-4">Unified 45 disparate data silos into a single source of truth. This centralized knowledge graph allows for automated regulatory compliance and lineage tracking across the entire data lifecycle.</p>
+                    <div class="glass-card">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="fs-1 text-emerald"><i class="bi bi-diagram-3-fill"></i></div>
+                            <div>
+                                <h5 class="text-white mb-0">Automated Lineage</h5>
+                                <p class="text-muted small mb-0">Tracking data provenance across 10,000+ ETL nodes.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Repeat with different labels -->
+                <div class="col-lg-6 text-center">
+                    <div class="pulse-expand-wrapper reveal-on-scroll draw-ring">
+                        <div class="pulse-ring"></div>
+                        <img src="assets/images/governance.png" alt="Governance Map" class="img-fluid rounded-circle" style="width: 380px; height: 380px; object-fit: cover; border: 4px solid var(--graph-teal);">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -158,12 +256,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        document.querySelectorAll('img').forEach(img => {
-            if (img.src.includes('graph_network_hero.png')) img.src = 'graph_network_hero_1778674770438.png';
-            if (img.src.includes('knowledge_graph_visualization.png')) img.src = 'knowledge_graph_visualization_1778674792622.png';
-            if (img.src.includes('graph_monitoring_dashboard_3d.png')) img.src = 'graph_monitoring_dashboard_3d_1778674841918.png';
-        });
-    </script>
 </body>
 </html>

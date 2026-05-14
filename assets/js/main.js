@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initRtlToggle();
     initNavbarScroll();
     initCounters();
+    initRevealOnScroll();
+    initBackToTop();
 });
 
 // Hero Animation: Connected Nodes
@@ -156,25 +158,63 @@ function initCounters() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const target = +entry.target.getAttribute('data-target');
-                const count = +entry.target.innerText;
-                const speed = 200;
-                const inc = target / speed;
+                const target = parseFloat(entry.target.getAttribute('data-target'));
+                const suffix = entry.target.getAttribute('data-suffix') || '';
+                const decimals = parseInt(entry.target.getAttribute('data-decimals')) || 0;
+                const duration = 1500;
+                let startTime = null;
 
-                const updateCount = () => {
-                    const current = +entry.target.innerText;
-                    if (current < target) {
-                        entry.target.innerText = Math.ceil(current + inc);
-                        setTimeout(updateCount, 1);
-                    } else {
-                        entry.target.innerText = target;
-                    }
+                const animate = (timestamp) => {
+                    if (!startTime) startTime = timestamp;
+                    const progress = timestamp - startTime;
+                    const percentage = Math.min(progress / duration, 1);
+                    const ease = percentage === 1 ? 1 : 1 - Math.pow(2, -10 * percentage);
+                    const current = ease * target;
+                    entry.target.innerText = current.toFixed(decimals) + suffix;
+                    if (percentage < 1) requestAnimationFrame(animate);
+                    else entry.target.innerText = target.toFixed(decimals) + suffix;
                 };
-                updateCount();
+                requestAnimationFrame(animate);
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 1 });
-
+    }, { threshold: 0.2 });
     counters.forEach(counter => observer.observe(counter));
+}
+
+// Reveal on Scroll Animation
+function initRevealOnScroll() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+}
+
+// Back to Top functionality
+function initBackToTop() {
+    let btn = document.getElementById('back-to-top');
+    if (!btn) {
+        btn = document.createElement('button');
+        btn.id = 'back-to-top';
+        btn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+        btn.className = 'back-to-top';
+        document.body.appendChild(btn);
+    }
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 }

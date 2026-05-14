@@ -5,12 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Graph Intelligence Consulting</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .contact-info-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: var(--transition);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .contact-info-card:hover {
+            border-color: var(--electric-emerald);
+            transform: translateX(10px);
+            background: rgba(16, 185, 129, 0.05);
+        }
+        .contact-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        .contact-info-card:hover .contact-icon-wrapper {
+            background: var(--electric-emerald);
+            color: var(--primary-bg);
+            transform: rotate(10deg) scale(1.1);
+        }
+        .social-link-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .social-icon-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        .social-icon-btn:hover {
+            transform: translateY(-5px);
+            color: #fff;
+            border-color: var(--electric-emerald);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+        .social-icon-btn.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+        .social-icon-btn.github:hover { background: #333; border-color: #333; }
+        .social-icon-btn.twitter:hover { background: #000; border-color: #fff; }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-xl navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-diagram-3-fill"></i>
@@ -40,32 +104,62 @@
         </div>
     </nav>
 
-    <section class="section-padding mt-5">
+    <header class="section-padding mt-5 text-center">
+        <div class="container">
+            <h1 class="text-white display-4 mb-4">Let's <span class="text-gradient">Connect</span></h1>
+            <p class="text-muted fs-5 mx-auto" style="max-width: 700px;">Ready to transform your siloed data into an intelligent network? Book a consultation today.</p>
+        </div>
+    </header>
+
+    <hr class="border-secondary opacity-25 m-0">
+
+    <section class="section-padding">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-5">
-                    <h1 class="text-white mb-4">Let's <span class="text-gradient">Connect</span></h1>
-                    <p class="text-muted fs-5 mb-5">Ready to transform your siloed data into an intelligent network? Book a consultation today.</p>
+                    <div class="contact-info-card reveal-on-scroll bounce-reveal">
+                        <div class="contact-icon-wrapper text-emerald">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <h6 class="text-white mb-1">Global Office</h6>
+                            <p class="text-muted small mb-0">San Francisco, CA (Remote-First Hub)</p>
+                        </div>
+                    </div>
                     
-                    <div class="d-flex gap-4 mb-4">
-                        <div class="fs-3 text-emerald"><i class="bi bi-geo-alt"></i></div>
+                    <div class="contact-info-card reveal-on-scroll bounce-reveal" style="transition-delay: 0.1s;">
+                        <div class="contact-icon-wrapper text-teal">
+                            <i class="bi bi-envelope"></i>
+                        </div>
                         <div>
-                            <h6 class="text-white mb-1">Office</h6>
-                            <p class="text-muted small">San Francisco, CA (Global Remote)</p>
+                            <h6 class="text-white mb-1">Project Inquiries</h6>
+                            <p class="text-muted small mb-0">consult@graphintel.io</p>
                         </div>
                     </div>
-                    <div class="d-flex gap-4 mb-4">
-                        <div class="fs-3 text-teal"><i class="bi bi-envelope"></i></div>
+
+                    <div class="contact-info-card reveal-on-scroll bounce-reveal" style="transition-delay: 0.2s;">
+                        <div class="contact-icon-wrapper text-blue">
+                            <i class="bi bi-phone"></i>
+                        </div>
                         <div>
-                            <h6 class="text-white mb-1">Email</h6>
-                            <p class="text-muted small">consult@graphintel.io</p>
+                            <h6 class="text-white mb-1">Urgent Support</h6>
+                            <p class="text-muted small mb-0">+1 (555) GRAPH-DB</p>
                         </div>
                     </div>
-                    <div class="d-flex gap-4">
-                        <div class="fs-3 text-blue"><i class="bi bi-phone"></i></div>
-                        <div>
-                            <h6 class="text-white mb-1">Phone</h6>
-                            <p class="text-muted small">+1 (555) GRAPH-DB</p>
+
+                    <!-- Social Network Section -->
+                    <div class="mt-5 reveal-on-scroll bounce-reveal" style="transition-delay: 0.3s;">
+                        <h6 class="text-white mb-3">Follow the Network</h6>
+                        <div class="social-link-group">
+                            <a href="#" class="social-icon-btn linkedin" title="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-icon-btn github" title="GitHub">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="#" class="social-icon-btn twitter" title="X (Twitter)">
+                                <i class="bi bi-twitter-x"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -100,6 +194,22 @@
             </div>
         </div>
     </section>
+    <!-- Map Section -->
+    <section class="section-padding pt-0">
+        <div class="container">
+            <div class="glass-card p-2 reveal-on-scroll bounce-reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789!2d-122.3967!3d37.7919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085806400000001%3A0x0!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0; border-radius: 12px;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer-custom">
         <div class="container">

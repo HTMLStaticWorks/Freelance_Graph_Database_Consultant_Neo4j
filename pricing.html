@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing | Graph Intelligence Consulting</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,6 +19,7 @@
             transition: var(--transition);
             text-align: center;
             height: 100%;
+            position: relative;
         }
         .pricing-card.featured {
             border-color: var(--electric-emerald);
@@ -24,12 +27,23 @@
             transform: scale(1.05);
             z-index: 10;
         }
-        .price { font-size: 3.5rem; font-weight: 800; color: #fff; margin: 1.5rem 0; }
+        .popular-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.5rem 1.5rem !important;
+            font-size: 0.75rem !important;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+            z-index: 20;
+        }
+        .price { font-size: 3.5rem; font-weight: 800; color: var(--text-primary); margin: 1.5rem 0; }
         .price span { font-size: 1rem; color: var(--text-muted); }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-xl navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-diagram-3-fill"></i>
@@ -59,12 +73,18 @@
         </div>
     </nav>
 
-    <section class="section-padding mt-5 text-center">
+    <header class="section-padding mt-5 text-center">
         <div class="container">
             <h1 class="text-white display-4 mb-4">Investment in <span class="text-gradient">Intelligence</span></h1>
             <p class="text-muted mb-5">Transparent pricing for world-class graph database expertise.</p>
-            
-            <div class="row g-4 align-items-center">
+        </div>
+    </header>
+
+    <hr class="border-secondary opacity-25 m-0">
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
                 <div class="col-lg-4">
                     <div class="pricing-card">
                         <h4 class="text-white">Quick Audit</h4>
@@ -75,12 +95,12 @@
                             <li class="mb-2"><i class="bi bi-check text-emerald me-2"></i> Schema review (10 labels)</li>
                             <li class="mb-2"><i class="bi bi-check text-emerald me-2"></i> 1-hour strategy call</li>
                         </ul>
-                        <button class="btn-graph btn-outline-graph w-100">Choose Basic</button>
+                        <button class="btn-graph btn-outline-graph w-100 justify-content-center">Choose Basic</button>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="pricing-card featured">
-                        <span class="badge bg-emerald mb-3">MOST POPULAR</span>
+                        <span class="badge bg-emerald popular-badge">MOST POPULAR</span>
                         <h4 class="text-white">Enterprise Opt.</h4>
                         <p class="text-muted">Comprehensive graph architecture and optimization.</p>
                         <div class="price">$4,999<span>/ Project</span></div>
@@ -90,7 +110,7 @@
                             <li class="mb-2"><i class="bi bi-check text-emerald me-2"></i> GDS algorithm implementation</li>
                             <li class="mb-2"><i class="bi bi-check text-emerald me-2"></i> 4 weeks post-deployment support</li>
                         </ul>
-                        <button class="btn-graph btn-primary-graph w-100">Get Started</button>
+                        <button class="btn-graph btn-primary-graph w-100 justify-content-center">Get Started</button>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -103,12 +123,120 @@
                             <li class="mb-2"><i class="bi bi-check text-emerald me-2"></i> 24/7 priority support</li>
                             <li class="mb-2"><i class="bi bi-check text-emerald me-2"></i> Continuous graph tuning</li>
                         </ul>
-                        <button class="btn-graph btn-outline-graph w-100">Contact Sales</button>
+                        <button class="btn-graph btn-outline-graph w-100 justify-content-center">Contact Sales</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Unique Section 1: Value Assessment (Metric Grid) -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="text-white mb-4">The <span class="text-gradient">ROI</span> of Graph</h2>
+                    <p class="text-muted mb-5">Investing in a native graph strategy isn't just about speed—it's about unlocking insights that relational databases simply cannot see.</p>
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="glass-card reveal-on-scroll bounce-reveal">
+                                <div class="display-5 text-emerald mb-2">10x</div>
+                                <p class="text-white small mb-0">Faster Insights</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="glass-card reveal-on-scroll bounce-reveal" style="transition-delay: 0.1s;">
+                                <div class="display-5 text-blue mb-2">35%</div>
+                                <p class="text-white small mb-0">Lower TCO</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="glass-card reveal-on-scroll bounce-reveal" style="transition-delay: 0.2s;">
+                                <div class="display-5 text-teal mb-2">100%</div>
+                                <p class="text-white small mb-0">Data Visibility</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="glass-card reveal-on-scroll bounce-reveal" style="transition-delay: 0.3s;">
+                                <div class="display-5 text-orange mb-2">2.4s</div>
+                                <p class="text-white small mb-0">Query Latency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/images/realtime.png" alt="ROI Analysis" class="img-fluid rounded-4 shadow-lg pulse-glow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Section 2: Graph Transition Workflow (Zig-Zag) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5 align-items-center flex-row-reverse">
+                <div class="col-lg-6">
+                    <h2 class="text-white mb-4">Enterprise <span class="text-gradient">SLA</span> Guarantees</h2>
+                    <p class="text-muted mb-4">We don't just optimize; we guarantee the performance and reliability of your production graph clusters through strict Service Level Agreements.</p>
+                    <div class="sticky-card reveal-on-scroll">
+                        <h5 class="text-white">99.99% Uptime Commitment</h5>
+                        <p class="text-muted small mb-0">Continuous monitoring and automated failover protocols for distributed Neo4j clusters.</p>
+                    </div>
+                    <div class="sticky-card reveal-on-scroll">
+                        <h5 class="text-white">Sub-Second Query SLA</h5>
+                        <p class="text-muted small mb-0">Guaranteed response times for critical pathfinding and recommendation traversals.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="scan-container reveal-on-scroll">
+                        <div class="scan-line"></div>
+                        <img src="assets/images/scalable.png" alt="SLA Monitoring" class="img-fluid rounded-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Section 3: Compliance & Security (Security Grid) -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-white">Enterprise <span class="text-gradient">Compliance</span></h2>
+                <p class="text-muted">Meeting the highest standards for data security and governance.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center reveal-on-scroll bounce-reveal">
+                        <div class="fs-1 text-emerald mb-3"><i class="bi bi-shield-check"></i></div>
+                        <h5 class="text-white">SOC 2 Type II</h5>
+                        <p class="text-muted small mb-0">Rigorous independent audits of our operational security and data handling protocols.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center reveal-on-scroll bounce-reveal" style="transition-delay: 0.1s;">
+                        <div class="fs-1 text-blue mb-3"><i class="bi bi-lock"></i></div>
+                        <h5 class="text-white">GDPR Ready</h5>
+                        <p class="text-muted small mb-0">Full compliance with European data protection regulations for personal data processing.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center reveal-on-scroll bounce-reveal" style="transition-delay: 0.2s;">
+                        <div class="fs-1 text-teal mb-3"><i class="bi bi-safe"></i></div>
+                        <h5 class="text-white">ISO 27001</h5>
+                        <p class="text-muted small mb-0">Adherence to international standards for information security management systems.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center reveal-on-scroll bounce-reveal" style="transition-delay: 0.3s;">
+                        <div class="fs-1 text-orange mb-3"><i class="bi bi-heart-pulse-fill"></i></div>
+                        <h5 class="text-white">HIPAA Compliant</h5>
+                        <p class="text-muted small mb-0">Safe handling of protected health information for medical and pharmaceutical graph data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer-custom">
         <div class="container">

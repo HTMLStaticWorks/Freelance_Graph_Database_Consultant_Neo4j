@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Graph Intelligence Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -39,7 +41,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
+    <nav class="navbar navbar-expand-xl navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-diagram-3-fill"></i>
@@ -76,49 +78,169 @@
         </div>
     </header>
 
-    <section class="pb-5">
+    <hr class="border-secondary opacity-25 m-0">
+
+    <section class="section-padding">
         <div class="container">
             <div class="row g-4">
+                <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-hdd-stack"></i></div>
-                        <h4>Database Design</h4>
-                        <p class="text-muted">Whiteboard-to-production schema modeling focusing on relationship density and traversal efficiency.</p>
-                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <div class="service-card p-0 d-flex flex-column h-100">
+                        <img src="assets/images/relationship_modeling_schema.png" alt="Database Design" class="img-fluid border-bottom border-secondary border-opacity-10" style="height: 220px; width: 100%; object-fit: cover;">
+                        <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1">
+                            <h4>Database Design</h4>
+                            <p class="text-muted mb-4">Whiteboard-to-production schema modeling focusing on relationship density and traversal efficiency.</p>
+                            <a href="service-details.html" class="btn-graph btn-outline-graph mt-auto justify-content-center w-100">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
+                <!-- Card 2 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-lightning-charge"></i></div>
-                        <h4>Neo4j Consulting</h4>
-                        <p class="text-muted">High-level strategic consulting for cluster management, security, and enterprise scaling.</p>
-                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <div class="service-card p-0 d-flex flex-column h-100">
+                        <img src="assets/images/governance.png" alt="Neo4j Consulting" class="img-fluid border-bottom border-secondary border-opacity-10" style="height: 220px; width: 100%; object-fit: cover;">
+                        <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1">
+                            <h4>Neo4j Consulting</h4>
+                            <p class="text-muted mb-4">High-level strategic consulting for cluster management, security, and enterprise scaling.</p>
+                            <a href="service-details.html" class="btn-graph btn-outline-graph mt-auto justify-content-center w-100">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
+                <!-- Card 3 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-diagram-3"></i></div>
-                        <h4>Graph Algorithms</h4>
-                        <p class="text-muted">Implementing PageRank, Community Detection, and Pathfinding using Neo4j GDS library.</p>
-                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <div class="service-card p-0 d-flex flex-column h-100">
+                        <img src="assets/images/predictive.png" alt="Graph Algorithms" class="img-fluid border-bottom border-secondary border-opacity-10" style="height: 220px; width: 100%; object-fit: cover;">
+                        <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1">
+                            <h4>Graph Algorithms</h4>
+                            <p class="text-muted mb-4">Implementing PageRank, Community Detection, and Pathfinding using Neo4j GDS library.</p>
+                            <a href="service-details.html" class="btn-graph btn-outline-graph mt-auto justify-content-center w-100">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
+                <!-- Card 4 -->
                 <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-stars"></i></div>
-                        <h4>Recommendation Engines</h4>
-                        <p class="text-muted">Building real-time personalized recommendation systems based on user behavior and affinity maps.</p>
-                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    <div class="service-card p-0 d-flex flex-column h-100">
+                        <img src="assets/images/collaborative.png" alt="Recommendation Engines" class="img-fluid border-bottom border-secondary border-opacity-10" style="height: 220px; width: 100%; object-fit: cover;">
+                        <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1">
+                            <h4>Recommendation Engines</h4>
+                            <p class="text-muted mb-4">Building real-time personalized recommendation systems based on user behavior and affinity maps.</p>
+                            <a href="service-details.html" class="btn-graph btn-outline-graph mt-auto justify-content-center w-100">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
+                <!-- Card 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card p-0 d-flex flex-column h-100">
+                        <img src="assets/images/knowledge_graph_visualization.png" alt="Knowledge Graphs" class="img-fluid border-bottom border-secondary border-opacity-10" style="height: 220px; width: 100%; object-fit: cover;">
+                        <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1">
+                            <h4>Knowledge Graphs</h4>
+                            <p class="text-muted mb-4">Architecting intelligent knowledge ecosystems that connect siloed enterprise data points.</p>
+                            <a href="service-details.html" class="btn-graph btn-outline-graph mt-auto justify-content-center w-100">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card p-0 d-flex flex-column h-100">
+                        <img src="assets/images/semantic-graph.png" alt="Graph RAG Integrations" class="img-fluid border-bottom border-secondary border-opacity-10" style="height: 220px; width: 100%; object-fit: cover;">
+                        <div class="p-4 p-xl-5 d-flex flex-column flex-grow-1">
+                            <h4>Graph RAG Integrations</h4>
+                            <p class="text-muted mb-4">Supercharging Large Language Models (LLMs) with high-fidelity contextual data from Knowledge Graphs.</p>
+                            <a href="service-details.html" class="btn-graph btn-outline-graph mt-auto justify-content-center w-100">Learn More <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="bi bi-brain"></i></div>
-                        <h4>Knowledge Graphs</h4>
-                        <p class="text-muted">Architecting intelligent knowledge ecosystems that connect siloed enterprise data points.</p>
-                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+    <!-- Unique Section 1: The Engagement Model (Process Timeline Layout) -->
+    <section class="section-padding bg-secondary-bg overflow-hidden">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-white">The <span class="text-gradient">Engagement</span> Model</h2>
+                <p class="text-muted">A structured approach to transforming your data.</p>
+            </div>
+            <div class="row g-5 mt-4 mb-5">
+                <div class="col-lg-4 text-center reveal-on-scroll bounce-reveal">
+                    <div class="display-4 text-emerald mb-3"><i class="bi bi-1-circle"></i></div>
+                    <h4 class="text-white">Discovery & Audit</h4>
+                    <p class="text-muted">Deep dive into your existing schemas, query bottlenecks, and business objectives. We map the current state to identify high-ROI graph opportunities.</p>
+                </div>
+                <div class="col-lg-4 text-center reveal-on-scroll bounce-reveal" style="transition-delay: 0.2s;">
+                    <div class="display-4 text-blue mb-3"><i class="bi bi-2-circle"></i></div>
+                    <h4 class="text-white">Architecture & Prototyping</h4>
+                    <p class="text-muted">Developing optimized data models and PoC clusters. We test relationship density and traversal speeds against real-world data loads.</p>
+                </div>
+                <div class="col-lg-4 text-center reveal-on-scroll bounce-reveal" style="transition-delay: 0.4s;">
+                    <div class="display-4 text-teal mb-3"><i class="bi bi-3-circle"></i></div>
+                    <h4 class="text-white">Production Deployment</h4>
+                    <p class="text-muted">Scaling to enterprise clusters, implementing security protocols, setting up backup routines, and training your engineering team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Section 2: Enterprise Scaling (Split Screen Layout) -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 reveal-on-scroll">
+                    <img src="assets/images/scalable.png" alt="Enterprise Scalability" class="img-fluid rounded-4 pulse-glow w-100">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="text-white mb-5">Enterprise <span class="text-gradient">Scaling</span></h2>
+                    
+                    <div class="sticky-card reveal-on-scroll">
+                        <h4 class="text-white">Zero-Downtime Operations</h4>
+                        <p class="text-muted mb-0">Implementing active-active Causal Clustering ensures your graph database remains highly available even during catastrophic regional failures or rolling upgrades.</p>
                     </div>
+                    
+                    <div class="sticky-card reveal-on-scroll">
+                        <h4 class="text-white">Terabyte-Scale Traversals</h4>
+                        <p class="text-muted mb-0">Optimizing memory configurations and index usage to maintain sub-millisecond query performance, even when traversing graphs with billions of nodes and edges.</p>
+                    </div>
+                    
+                    <div class="sticky-card reveal-on-scroll mb-0">
+                        <h4 class="text-white">Fabric & Sharding</h4>
+                        <p class="text-muted mb-0">Utilizing Neo4j Fabric to distribute processing across multiple isolated databases, enabling horizontal scalability without compromising Cypher's expressive power.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Section 3: ROI Dashboard (Radial Metrics Layout) -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-white">Performance <span class="text-gradient">Metrics</span></h2>
+                <p class="text-muted">Typical results after a comprehensive graph optimization sprint.</p>
+            </div>
+            <div class="radial-dashboard reveal-on-scroll draw-ring">
+                <div class="radial-ring"></div>
+                <div class="radial-center">
+                    <img src="assets/images/performance.png" alt="Core Performance" class="img-fluid rounded-circle p-2" style="width: 200px; height: 200px; object-fit: cover;">
+                    <h4 class="text-white mt-2">Core Metrics</h4>
+                </div>
+                
+                <div class="radial-item top-left">
+                    <h3 class="text-emerald mb-0">100x</h3>
+                    <small class="text-muted">Query Speedup</small>
+                </div>
+                
+                <div class="radial-item top-right">
+                    <h3 class="text-blue mb-0">99.99%</h3>
+                    <small class="text-muted">Cluster Uptime</small>
+                </div>
+                
+                <div class="radial-item bottom-left">
+                    <h3 class="text-teal mb-0">0.4ms</h3>
+                    <small class="text-muted">Traversal Latency</small>
+                </div>
+                
+                <div class="radial-item bottom-right">
+                    <h3 class="text-orange mb-0">-60%</h3>
+                    <small class="text-muted">Storage Footprint</small>
                 </div>
             </div>
         </div>
