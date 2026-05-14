@@ -83,6 +83,16 @@ body.light-mode .nav-link:hover {
     color: var(--electric-emerald) !important;
 }
 
+body.light-mode .orbit-item {
+    background: var(--card-bg);
+    border-color: var(--glass-border);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+body.light-mode .btn-close-white {
+    filter: none;
+}
+
 
 /* Base Styles */
 body {
@@ -594,6 +604,17 @@ a {
 .bg-teal { background-color: var(--graph-teal); color: var(--graph-teal); }
 .bg-blue { background-color: var(--network-blue); color: var(--network-blue); }
 
+.text-emerald {
+    color: var(--electric-emerald) !important;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.text-emerald:hover {
+    color: var(--graph-teal) !important;
+    text-decoration: underline !important;
+}
+
 /* Timeline Styles */
 .timeline-container {
     position: relative;
@@ -688,7 +709,8 @@ a {
 .orbit-item {
     position: absolute;
     padding: 12px 20px;
-    background: rgba(23, 32, 51, 0.95);
+    background: var(--glass-bg);
+    color: var(--text-primary);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
     white-space: nowrap;
