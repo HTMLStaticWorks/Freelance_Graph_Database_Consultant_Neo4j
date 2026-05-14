@@ -534,6 +534,22 @@ a {
         margin-top: -50px;
         margin-left: 20px;
         margin-right: 20px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
+    .overlap-card .btn-graph {
+        display: inline-flex;
+        margin-top: 2rem !important;
+        width: fit-content;
+    }
+    .overlap-card .list-unstyled {
+        display: block;
+        text-align: left;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -789,7 +805,7 @@ a {
 }
 .radial-item {
     position: absolute;
-    background: rgba(23, 32, 51, 0.95);
+    background: var(--card-bg);
     border: 1px solid var(--glass-border);
     padding: 1.5rem;
     border-radius: 20px;
