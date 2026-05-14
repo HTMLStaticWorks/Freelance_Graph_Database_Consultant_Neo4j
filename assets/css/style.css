@@ -239,6 +239,7 @@ a {
 .text-gradient {
     background: linear-gradient(to right, var(--text-primary), var(--electric-emerald));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -438,11 +439,6 @@ a {
     right: 0;
     border-right: none;
     border-left: 1px solid var(--glass-border);
-    transform: translateX(100%);
-}
-
-[dir="rtl"] .sidebar.active {
-    transform: translateX(0);
 }
 
 [dir="rtl"] .main-content {
@@ -451,6 +447,12 @@ a {
 }
 
 @media (max-width: 991px) {
+    [dir="rtl"] .sidebar {
+        transform: translateX(100%);
+    }
+    [dir="rtl"] .sidebar.active {
+        transform: translateX(0);
+    }
     [dir="rtl"] .main-content {
         margin-right: 0;
     }
