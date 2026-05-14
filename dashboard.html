@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Intelligence Dashboard | Enterprise Console</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .dashboard-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem; transition: var(--transition); }
+        .dashboard-card:hover { border-color: var(--electric-emerald); }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+        .online { background: var(--success); box-shadow: 0 0 10px var(--success); }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="text-center mb-4 px-3">
+                <a class="navbar-brand justify-content-center" href="index.html">
+                    <i class="bi bi-diagram-3-fill"></i>
+                    NODALIS
+                </a>
+            </div>
+            
+            <nav>
+                <a href="#" class="sidebar-link active" data-section="overview">
+                    <i class="bi bi-grid-1x2"></i> Overview
+                </a>
+                <a href="#" class="sidebar-link" data-section="modeling">
+                    <i class="bi bi-diagram-2"></i> Relationship Modeling
+                </a>
+                <a href="#" class="sidebar-link" data-section="performance">
+                    <i class="bi bi-lightning"></i> Query Profiling
+                </a>
+                <a href="#" class="sidebar-link" data-section="recommendation">
+                    <i class="bi bi-stars"></i> Recommendation
+                </a>
+                <a href="#" class="sidebar-link" data-section="traversal">
+                    <i class="bi bi-share"></i> Traversal Opt.
+                </a>
+                <a href="#" class="sidebar-link" data-section="visualization">
+                    <i class="bi bi-eye"></i> Real-Time Vis
+                </a>
+                <hr class="border-secondary my-2">
+                <a href="#" class="sidebar-link" data-section="downloads">
+                    <i class="bi bi-download"></i> Downloads
+                </a>
+                <a href="#" class="sidebar-link" data-section="messages">
+                    <i class="bi bi-chat-dots"></i> Messages
+                </a>
+                <a href="#" class="sidebar-link" data-section="settings">
+                    <i class="bi bi-gear"></i> Settings
+                </a>
+            </nav>
+
+            <div class="mt-auto">
+                <a href="index.html" class="sidebar-link text-danger">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-top-bar">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-secondary d-lg-none" id="sidebar-toggle"><i class="bi bi-list"></i></button>
+                    <div class="d-flex align-items-center text-white">
+                        <span class="fw-bold fs-5">Dashboard</span>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center gap-3 me-2">
+                        <button class="btn btn-link theme-aware-text p-0" id="theme-toggle"><i class="bi bi-sun-fill fs-5"></i></button>
+                        <button class="btn btn-link theme-aware-text p-0" id="rtl-toggle"><i class="bi bi-arrow-left-right fs-5"></i></button>
+                    </div>
+                    
+                    <div class="vertical-divider"></div>
+                    
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="text-end d-none d-md-block">
+                            <div class="text-white small fw-bold">Admin User</div>
+                            <div class="text-muted smaller">Graph Architect</div>
+                        </div>
+                        <div class="bg-gradient-emerald rounded-3 p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--electric-emerald), var(--graph-teal));">
+                            <i class="bi bi-person-fill text-white fs-5"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-section-wrapper">
+                <!-- Dashboard Sections -->
+                
+                <!-- 1. OVERVIEW -->
+                <section id="overview" class="dashboard-section">
+                    <h2 class="text-white mb-4 fw-bold">Enterprise Intelligence</h2>
+                    <div class="row g-4 mb-5">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="dashboard-card">
+                                <small class="text-muted">TOTAL NODES</small>
+                                <h2 class="text-white mb-0">1.24M</h2>
+                                <div class="text-success small mt-2"><i class="bi bi-arrow-up"></i> 12% growth</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="dashboard-card">
+                                <small class="text-muted">RELATIONSHIPS</small>
+                                <h2 class="text-white mb-0">8.5M</h2>
+                                <div class="text-success small mt-2"><i class="bi bi-arrow-up"></i> 8% growth</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="dashboard-card">
+                                <small class="text-muted">AVG LATENCY</small>
+                                <h2 class="text-white mb-0">24ms</h2>
+                                <div class="text-emerald small mt-2">Stable performance</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="dashboard-card">
+                                <small class="text-muted">MEMORY USAGE</small>
+                                <h2 class="text-white mb-0">64%</h2>
+                                <div class="text-warning small mt-2">Optimized heap</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="dashboard-card h-100">
+                                <h5 class="text-white mb-4">Query Execution Timeline</h5>
+                                <div style="height: 300px; background: rgba(255,255,255,0.02); border-radius: 10px; display: flex; align-items: flex-end; padding: 20px; gap: 10px;">
+                                    <!-- Mock Chart -->
+                                    <div style="flex:1; background: var(--electric-emerald); height: 40%; opacity: 0.5;"></div>
+                                    <div style="flex:1; background: var(--electric-emerald); height: 70%; opacity: 0.7;"></div>
+                                    <div style="flex:1; background: var(--electric-emerald); height: 50%; opacity: 0.6;"></div>
+                                    <div style="flex:1; background: var(--electric-emerald); height: 90%;"></div>
+                                    <div style="flex:1; background: var(--electric-emerald); height: 60%; opacity: 0.8;"></div>
+                                    <div style="flex:1; background: var(--electric-emerald); height: 80%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="dashboard-card h-100">
+                                <h5 class="text-white mb-4">Active Traversals</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-2">
+                                        <div>
+                                            <div class="text-white small">Breadth-First Search</div>
+                                            <div class="text-muted smaller">v2.4 cluster</div>
+                                        </div>
+                                        <span class="badge bg-emerald">Running</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-2">
+                                        <div>
+                                            <div class="text-white small">Shortest Path Discovery</div>
+                                            <div class="text-muted smaller">v2.4 cluster</div>
+                                        </div>
+                                        <span class="badge bg-teal">Pending</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between">
+                                        <div>
+                                            <div class="text-white small">Community Louvain</div>
+                                            <div class="text-muted smaller">v1.2 replica</div>
+                                        </div>
+                                        <span class="badge bg-secondary">Offline</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. MODELING -->
+                <section id="modeling" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Relationship Modeling</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="dashboard-card h-100">
+                                <h6>Schema Preview</h6>
+                                <img src="assets/images/relationship_modeling_schema.png" class="img-fluid rounded-3 mt-3 w-100" style="object-fit: cover; height: calc(100% - 2.5rem);">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="dashboard-card h-100 d-flex flex-column">
+                                <h6>Node Properties</h6>
+                                <div class="bg-dark p-3 rounded-3 mt-3 mb-4">
+                                    <code class="text-emerald">{ "id": "uuid", "label": "Person", "properties": { "name": "string", "age": "int" } }</code>
+                                </div>
+                                
+                                <h6>Relationship Types</h6>
+                                <div class="bg-dark p-3 rounded-3 mt-3 mb-4">
+                                    <code class="text-teal">-[:PURCHASED {date: 'datetime', amount: 'float'}]-></code><br>
+                                    <code class="text-teal">-[:FRIEND_OF {since: 'date'}]-></code><br>
+                                    <code class="text-teal">-[:WORKS_AT {role: 'string'}]-></code>
+                                </div>
+                                
+                                <h6>Active Constraints & Indexes</h6>
+                                <div class="mt-3 flex-grow-1">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-2">
+                                            <span class="text-muted small">Person(id) Uniqueness</span>
+                                            <span class="badge bg-emerald text-dark">Enforced</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-2">
+                                            <span class="text-muted small">User(email) B-Tree Index</span>
+                                            <span class="badge bg-emerald text-dark">Online</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between">
+                                            <span class="text-muted small">Product(price) Range Index</span>
+                                            <span class="badge bg-teal text-dark">Populating</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. PERFORMANCE -->
+                <section id="performance" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Query Profiling</h3>
+                    
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="dashboard-card h-100">
+                                <h5 class="text-white mb-4">Live Query Log</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-dark table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Query Pattern</th>
+                                                <th>DB Hits</th>
+                                                <th>Time (ms)</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>MATCH (n:Person)-[*1..3]->(m)</code></td>
+                                                <td>125,402</td>
+                                                <td>142</td>
+                                                <td><span class="text-warning">Slow</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MATCH (n:User {id: '123'})</code></td>
+                                                <td>1</td>
+                                                <td>0.4</td>
+                                                <td><span class="text-success">Optimal</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>CALL gds.pageRank.stream('myGraph')</code></td>
+                                                <td>4,500,210</td>
+                                                <td>850</td>
+                                                <td><span class="text-warning">Heavy</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MATCH (p:Product)<-[:PURCHASED]-(u:User)</code></td>
+                                                <td>14,520</td>
+                                                <td>12</td>
+                                                <td><span class="text-success">Optimal</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>MATCH (n) RETURN count(n)</code></td>
+                                                <td>0 (Cache)</td>
+                                                <td>0.1</td>
+                                                <td><span class="text-emerald">Cached</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="dashboard-card h-100 d-flex flex-column">
+                                <h5 class="text-white mb-4">Resource Allocation</h5>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-muted">Page Cache Hit Ratio</small>
+                                        <small class="text-emerald fw-bold">98.5%</small>
+                                    </div>
+                                    <div class="progress bg-dark" style="height: 6px;">
+                                        <div class="progress-bar bg-emerald" style="width: 98.5%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-muted">Heap Usage</small>
+                                        <small class="text-warning fw-bold">76.2%</small>
+                                    </div>
+                                    <div class="progress bg-dark" style="height: 6px;">
+                                        <div class="progress-bar bg-warning" style="width: 76.2%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-muted">CPU Utilization</small>
+                                        <small class="text-teal fw-bold">42.8%</small>
+                                    </div>
+                                    <div class="progress bg-dark" style="height: 6px;">
+                                        <div class="progress-bar bg-teal" style="width: 42.8%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mt-auto pt-4">
+                                    <button class="btn btn-outline-graph w-100 btn-sm">Generate Profiling Report</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. RECOMMENDATION -->
+                <section id="recommendation" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Recommendation Accuracy</h3>
+                    
+                    <!-- Top Metrics -->
+                    <div class="row g-4 text-center mb-4">
+                        <div class="col-md-4">
+                            <div class="dashboard-card">
+                                <div class="display-5 text-emerald">94.2%</div>
+                                <small class="text-muted">Precision</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dashboard-card">
+                                <div class="display-5 text-teal">88.5%</div>
+                                <small class="text-muted">Recall</small>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dashboard-card">
+                                <div class="display-5 text-blue">91.4%</div>
+                                <small class="text-muted">F1 Score</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Details -->
+                    <div class="row g-4">
+                        <div class="col-lg-7">
+                            <div class="dashboard-card h-100">
+                                <h5 class="text-white mb-4">Active Models</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-dark table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Algorithm Model</th>
+                                                <th>Algorithm Type</th>
+                                                <th>Confidence</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Node2Vec Embedding</td>
+                                                <td>Deep Learning</td>
+                                                <td><span class="text-emerald">96%</span></td>
+                                                <td><span class="badge bg-emerald">Primary</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Collaborative Filtering</td>
+                                                <td>Similarity</td>
+                                                <td><span class="text-teal">89%</span></td>
+                                                <td><span class="badge bg-teal">Active</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>FastRP</td>
+                                                <td>Random Projection</td>
+                                                <td><span class="text-blue">91%</span></td>
+                                                <td><span class="badge bg-blue">Evaluating</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Personalized PageRank</td>
+                                                <td>Centrality</td>
+                                                <td><span class="text-warning">82%</span></td>
+                                                <td><span class="badge bg-secondary">Offline</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="dashboard-card h-100 d-flex flex-column">
+                                <h5 class="text-white mb-4">A/B Testing Impact</h5>
+                                
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-white">Click-Through Rate (CTR)</small>
+                                        <small class="text-emerald fw-bold">+14.2%</small>
+                                    </div>
+                                    <div class="progress bg-dark" style="height: 8px;">
+                                        <div class="progress-bar bg-emerald" style="width: 85%;"></div>
+                                    </div>
+                                    <small class="text-muted smaller mt-1 d-block">Compared to legacy relational model</small>
+                                </div>
+
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-white">Conversion Rate</small>
+                                        <small class="text-teal fw-bold">+8.7%</small>
+                                    </div>
+                                    <div class="progress bg-dark" style="height: 8px;">
+                                        <div class="progress-bar bg-teal" style="width: 65%;"></div>
+                                    </div>
+                                    <small class="text-muted smaller mt-1 d-block">Graph-based personalized sorting</small>
+                                </div>
+
+                                <div class="mt-auto bg-dark p-3 rounded-3 text-center border border-secondary border-opacity-50">
+                                    <i class="bi bi-graph-up-arrow fs-2 text-emerald mb-2"></i>
+                                    <h6 class="text-white mb-1">Model Retraining</h6>
+                                    <p class="text-muted small mb-0">Scheduled in 14 hours. New transaction edges will be embedded.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. TRAVERSAL -->
+                <section id="traversal" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Traversal Optimization</h3>
+                    <div class="dashboard-card">
+                        <p class="text-muted">Optimizing path expansion through index-free adjacency analysis.</p>
+                        <div class="bg-dark p-4 rounded-4 text-center">
+                            <i class="bi bi-diagram-3 fs-1 text-emerald mb-3"></i>
+                            <h4 class="text-white">Active Traversal Engine</h4>
+                            <button class="btn btn-primary-graph border-0 px-4 mt-3">Re-Index Path</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. VISUALIZATION -->
+                <section id="visualization" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Real-Time Visualization</h3>
+                    <div class="dashboard-card" style="height: 500px; background: radial-gradient(circle, #111827 0%, #0a0f1c 100%);">
+                        <!-- Visualization Placeholder -->
+                        <div class="d-flex align-items-center justify-content-center h-100">
+                            <div class="text-center">
+                                <div class="spinner-grow mb-3" style="color: #10b981 !important;" role="status"></div>
+                                <h5 style="color: #ffffff !important;">Connecting to Graph Stream...</h5>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. DOWNLOADS -->
+                <section id="downloads" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Export & Reports</h3>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                            <div class="dashboard-card text-center h-100 d-flex flex-column justify-content-center">
+                                <i class="bi bi-file-earmark-pdf fs-1 text-danger"></i>
+                                <h6 class="mt-3">Architecture_Audit.pdf</h6>
+                                <p class="text-muted small">Generated: Today, 10:30 AM</p>
+                                <button class="btn btn-sm btn-outline-secondary mt-auto w-100">Download (2.4 MB)</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dashboard-card text-center h-100 d-flex flex-column justify-content-center">
+                                <i class="bi bi-file-earmark-spreadsheet fs-1 text-success"></i>
+                                <h6 class="mt-3">Graph_Metrics_Q3.csv</h6>
+                                <p class="text-muted small">Generated: Yesterday, 4:15 PM</p>
+                                <button class="btn btn-sm btn-outline-secondary mt-auto w-100">Download (15.8 MB)</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="dashboard-card text-center h-100 d-flex flex-column justify-content-center">
+                                <i class="bi bi-file-earmark-code fs-1 text-info"></i>
+                                <h6 class="mt-3">Cypher_Scripts.cypher</h6>
+                                <p class="text-muted small">Generated: May 10, 2026</p>
+                                <button class="btn btn-sm btn-outline-secondary mt-auto w-100">Download (45 KB)</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 border-bottom border-secondary pb-3 gap-3">
+                            <h5 class="text-white mb-0"><i class="bi bi-hdd-network me-2 text-emerald"></i>Full Database Backup</h5>
+                            <button class="btn btn-primary-graph btn-sm border-0"><i class="bi bi-cloud-download me-2"></i>Trigger New Backup</button>
+                        </div>
+                        <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                            <div>
+                                <h6 class="text-white mb-1">Production_Cluster_Backup.dump</h6>
+                                <p class="text-muted small mb-0">Contains full schema, nodes, relationships, and indexes.</p>
+                            </div>
+                            <div class="text-md-end">
+                                <span class="badge bg-emerald mb-2">Ready for Download</span>
+                                <div class="text-muted small">Size: 4.2 GB</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 8. MESSAGES -->
+                <section id="messages" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Team Messages</h3>
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div class="dashboard-card h-100 p-0 overflow-hidden d-flex flex-column">
+                                <div class="p-3 border-bottom border-secondary bg-dark">
+                                    <h6 class="text-white mb-0">Recent Conversations</h6>
+                                </div>
+                                <div class="list-group list-group-flush bg-transparent flex-grow-1">
+                                    <a href="#" class="list-group-item list-group-item-action bg-transparent border-secondary p-3" style="background: rgba(16, 185, 129, 0.1) !important; border-left: 3px solid var(--electric-emerald);">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="text-white mb-0">John Doe</h6>
+                                            <small class="text-emerald">10:45 AM</small>
+                                        </div>
+                                        <small class="text-muted d-block text-truncate">The Cypher optimization is finished...</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action bg-transparent border-secondary p-3">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="text-white mb-0">Sarah Smith</h6>
+                                            <small class="text-muted">Yesterday</small>
+                                        </div>
+                                        <small class="text-muted d-block text-truncate">Can we review the new community...</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action bg-transparent border-secondary p-3">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <h6 class="text-white mb-0">DevOps Team</h6>
+                                            <small class="text-muted">May 11</small>
+                                        </div>
+                                        <small class="text-muted d-block text-truncate">Cluster scale-up completed successfully.</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="dashboard-card h-100 d-flex flex-column p-0 border-0 overflow-hidden">
+                                <div class="p-3 border-bottom border-secondary bg-dark d-flex align-items-center gap-3">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=10b981&color=fff" class="rounded-circle" width="40">
+                                    <div>
+                                        <h6 class="text-white mb-0">John Doe</h6>
+                                        <small class="text-emerald">Online</small>
+                                    </div>
+                                </div>
+                                <div class="p-4 flex-grow-1 d-flex flex-column justify-content-end" style="background: rgba(0,0,0,0.2); min-height: 300px;">
+                                    <div class="d-flex gap-3 mb-4">
+                                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=10b981&color=fff" class="rounded-circle align-self-start" width="35">
+                                        <div class="bg-dark p-3 rounded-3 border border-secondary" style="border-top-left-radius: 0 !important; max-width: 80%;">
+                                            <p class="text-white small mb-1">The Cypher optimization for the user profile query is finished. We reduced DB hits by 40%.</p>
+                                            <small class="text-muted">10:45 AM</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-3 justify-content-end mb-4">
+                                        <div class="p-3 rounded-3" style="background: linear-gradient(135deg, var(--electric-emerald), var(--graph-teal)); border-top-right-radius: 0 !important; max-width: 80%;">
+                                            <p class="text-white small mb-1">Excellent work. Did you verify the execution plan against the new index?</p>
+                                            <small class="text-white text-opacity-75">10:52 AM</small>
+                                        </div>
+                                        <div class="bg-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 35px; height: 35px; flex-shrink: 0;">
+                                            <i class="bi bi-person-fill text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-3 border-top border-secondary bg-dark">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-transparent border-secondary text-white shadow-none" placeholder="Type your message...">
+                                        <button class="btn btn-primary-graph border-0 px-4"><i class="bi bi-send-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 9. SETTINGS -->
+                <section id="settings" class="dashboard-section d-none">
+                    <h3 class="text-white mb-4">Platform Settings</h3>
+                    
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="dashboard-card h-100">
+                                <h5 class="text-white border-bottom border-secondary pb-3 mb-4"><i class="bi bi-display me-2"></i>User Preferences</h5>
+                                <div class="mb-4">
+                                    <label class="text-white mb-2">Display Mode</label>
+                                    <select class="form-select bg-dark border-secondary text-white">
+                                        <option>Dark Theme (Default)</option>
+                                        <option>Light Theme</option>
+                                        <option>System Default</option>
+                                    </select>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="text-white mb-2">Notification Interval</label>
+                                    <select class="form-select bg-dark border-secondary text-white">
+                                        <option>Real-time Alerts</option>
+                                        <option>Hourly Digest</option>
+                                        <option>Daily Summary</option>
+                                    </select>
+                                </div>
+                                <div class="form-check form-switch mt-4">
+                                    <input class="form-check-input bg-emerald border-emerald" type="checkbox" id="rtlSwitch">
+                                    <label class="form-check-label text-muted ms-2" for="rtlSwitch">Enable RTL Layout Support</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="dashboard-card h-100 d-flex flex-column">
+                                <h5 class="text-white border-bottom border-secondary pb-3 mb-4"><i class="bi bi-database me-2"></i>Database Connection</h5>
+                                <div class="mb-4">
+                                    <label class="text-white mb-2">Neo4j Bolt URI</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-dark border-secondary text-muted"><i class="bi bi-link-45deg"></i></span>
+                                        <input type="text" class="form-control bg-dark border-secondary text-white" value="bolt://cluster-a.neo4j.internal:7687" readonly>
+                                    </div>
+                                </div>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-6">
+                                        <label class="text-white mb-2">Max Pool Size</label>
+                                        <input type="number" class="form-control bg-dark border-secondary text-white" value="100">
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="text-white mb-2">Query Timeout (ms)</label>
+                                        <input type="number" class="form-control bg-dark border-secondary text-white" value="30000">
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-auto">
+                                    <span class="badge bg-emerald px-3 py-2">Connected</span>
+                                    <button class="btn btn-outline-graph btn-sm">Test Connection</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <div class="dashboard-card d-flex justify-content-between align-items-center flex-wrap gap-3">
+                                <div>
+                                    <h6 class="text-white mb-1">Unsaved Changes</h6>
+                                    <p class="text-muted small mb-0">You have modified your database connection parameters.</p>
+                                </div>
+                                <div class="d-flex gap-3">
+                                    <button class="btn btn-outline-secondary">Discard</button>
+                                    <button class="btn btn-primary-graph border-0">Save Configurations</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+/* RTL Support for Graph Intelligence */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+}
+
+[dir="rtl"] .sidebar {
+    left: auto;
+    right: 0;
+    border-right: none;
+    border-left: 1px solid var(--glass-border);
+}
+
+[dir="rtl"] .main-content {
+    margin-left: 0;
+    margin-right: 280px;
+}
+
+@media (max-width: 991px) {
+    [dir="rtl"] .main-content {
+        margin-right: 0;
+    }
+    [dir="rtl"] .sidebar {
+        transform: translateX(100%);
+    }
+    [dir="rtl"] .sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+[dir="rtl"] .footer-link:hover {
+    padding-left: 0;
+    padding-right: 5px;
+}

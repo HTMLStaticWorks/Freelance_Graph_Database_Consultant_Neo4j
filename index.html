@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Intelligence | Neo4j & Connected Data Consultant</title>
+    <meta name="description" content="Expert Neo4j consulting, graph database architecture, and recommendation engine optimization.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-diagram-3-fill"></i>
+                NODALIS
+            </a>
+            <button class="navbar-toggler border-0 theme-aware-text" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="graph-algorithms.html">Algorithms</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link theme-aware-text p-0" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
+                    <button class="btn btn-link theme-aware-text p-0" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
+                    <a href="login.html" class="btn-graph btn-primary-graph">Login</a>
+                    <a href="dashboard.html" class="btn-graph btn-outline-graph">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 hero-content">
+                    <h1 class="text-gradient">Transform Connected Data Into <span>Intelligent Insights</span></h1>
+                    <p class="lead text-muted mb-4 fs-5">Advanced Neo4j consulting, graph algorithms, recommendation engine optimization, and connected-data architecture for modern enterprises.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="services.html" class="btn-graph btn-primary-graph">Explore Solutions</a>
+                        <a href="contact.html" class="btn-graph btn-outline-graph">Book Consultation</a>
+                    </div>
+                    <div class="mt-5 d-flex gap-4">
+                        <div>
+                            <h4 class="counter mb-0" data-target="150">0</h4>
+                            <small class="text-muted">Graph Architectures</small>
+                        </div>
+                        <div>
+                            <h4 class="counter mb-0" data-target="50">0</h4>
+                            <small class="text-muted">Enterprise Clients</small>
+                        </div>
+                        <div>
+                            <h4 class="counter mb-0" data-target="10">0</h4>
+                            <small class="text-muted">Neo4j Certifications</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="glass-card text-center p-4">
+                        <img src="assets/images/graph_network_hero.png" alt="Graph Visualization" class="img-fluid rounded-4 mb-4">
+                        <h5>Real-Time Topology</h5>
+                        <p class="small text-muted">Active traversal of relationship nodes and edge weights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Interactive Graph Modeling Workflow -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Interactive <span class="text-gradient">Graph Modeling</span> Workflow</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">From whiteboard to production, we optimize every edge and node of your data ecosystem.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glass-card h-100 p-0 overflow-hidden">
+                        <img src="assets/images/workflow-discovery.png" alt="Discovery & Schema" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
+                        <div class="p-4">
+                            <h4>Discovery & Schema</h4>
+                            <p class="text-muted">Analyzing relationship density and defining node labels for optimal traversability across connected datasets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card h-100 p-0 overflow-hidden">
+                        <img src="assets/images/workflow-performance.png" alt="Performance Tuning" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
+                        <div class="p-4">
+                            <h4>Performance Tuning</h4>
+                            <p class="text-muted">Optimization of cache sharding, heap management, and relationship traversal paths for millisecond latency.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="glass-card h-100 p-0 overflow-hidden">
+                        <img src="assets/images/workflow-deployment.png" alt="Deployment & Scaling" class="img-fluid w-100" style="height: 220px; object-fit: cover;">
+                        <div class="p-4">
+                            <h4>Deployment & Scaling</h4>
+                            <p class="text-muted">Orchestrating high-availability clusters and automated graph sharding for global enterprise scale.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Section 3: Recommendation Engine Analytics -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Recommendation <span class="text-gradient">Engine Intelligence</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center">
+                        <div class="display-6 mb-2">99.8%</div>
+                        <small class="text-muted">Accuracy Rating</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center">
+                        <div class="display-6 mb-2">45ms</div>
+                        <small class="text-muted">Avg Latency</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center">
+                        <div class="display-6 mb-2">10B+</div>
+                        <small class="text-muted">Nodes Scaled</small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="glass-card text-center">
+                        <div class="display-6 mb-2">24/7</div>
+                        <small class="text-muted">Real-time Monitoring</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Real-Time Traversal Visualization -->
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2 class="mb-5">Visualizing the <span class="text-gradient">Invisible</span></h2>
+            <div class="glass-card p-5" style="background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 80%);">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="node-pulse bg-emerald rounded-circle mx-auto mb-4" style="width: 20px; height: 20px;"></div>
+                        <p class="text-muted fs-5">Interactive graph visualizations that reveal patterns, clusters, and anomalies within your connected datasets in real-time.</p>
+                        <a href="portfolio.html" class="btn-graph btn-primary-graph">Explore Projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Enterprise Graph Success Stories -->
+    <section class="section-padding bg-secondary-bg">
+        <div class="container">
+            <div class="section-title">
+                <h2>Enterprise <span class="text-gradient">Success Stories</span></h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="glass-card">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="badge bg-emerald">FinTech</span>
+                            <span class="text-muted">2024</span>
+                        </div>
+                        <h4>Fraud Detection System</h4>
+                        <p class="text-muted">Implemented a real-time fraud detection engine for a global bank, reducing false positives by 65% through relationship analysis.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="glass-card">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span class="badge bg-teal">Retail</span>
+                            <span class="text-muted">2023</span>
+                        </div>
+                        <h4>Next-Gen Recommendations</h4>
+                        <p class="text-muted">Optimized Neo4j traversals for a major e-commerce platform, increasing conversion rates by 22% via real-time affinity scoring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 d-block" href="#">
+                        <i class="bi bi-diagram-3-fill"></i>
+                        NODALIS
+                    </a>
+                    <p class="text-muted">Premium Neo4j and knowledge graph consulting for data-driven enterprises. Transforming relationships into competitive advantages.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-github"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="text-white mb-4">Services</h5>
+                    <a href="services.html" class="footer-link">Graph Design</a>
+                    <a href="graph-algorithms.html" class="footer-link">Algorithms</a>
+
+                    <a href="services.html" class="footer-link">Architecture</a>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a href="about.html" class="footer-link">About Me</a>
+                    <a href="portfolio.html" class="footer-link">Portfolio</a>
+                    <a href="pricing.html" class="footer-link">Pricing</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p class="text-muted small">Stay updated with the latest in graph technology.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="Email address">
+                        <button class="btn btn-primary-graph border-0"><i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-top border-secondary mt-5 pt-3 text-center">
+                <p class="text-muted small mb-0">&copy; 2026 Graph Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Graph Intelligence Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .service-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-emerald);
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.1);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--electric-emerald);
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-diagram-3-fill"></i>
+                NODALIS
+            </a>
+            <button class="navbar-toggler border-0 theme-aware-text" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="graph-algorithms.html">Algorithms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link theme-aware-text p-0" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
+                    <button class="btn btn-link theme-aware-text p-0" id="rtl-toggle"><i class="bi bi-arrow-left-right"></i></button>
+                    <a href="login.html" class="btn-graph btn-primary-graph">Login</a>
+                    <a href="dashboard.html" class="btn-graph btn-outline-graph">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="section-padding mt-5 text-center">
+        <div class="container">
+            <h1 class="text-white display-4 mb-3">Expert <span class="text-gradient">Graph Services</span></h1>
+            <p class="text-muted lead mx-auto" style="max-width: 700px;">Tailored consulting for Neo4j implementation, graph architecture, and advanced graph data science.</p>
+        </div>
+    </header>
+
+    <section class="pb-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-hdd-stack"></i></div>
+                        <h4>Database Design</h4>
+                        <p class="text-muted">Whiteboard-to-production schema modeling focusing on relationship density and traversal efficiency.</p>
+                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-lightning-charge"></i></div>
+                        <h4>Neo4j Consulting</h4>
+                        <p class="text-muted">High-level strategic consulting for cluster management, security, and enterprise scaling.</p>
+                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-diagram-3"></i></div>
+                        <h4>Graph Algorithms</h4>
+                        <p class="text-muted">Implementing PageRank, Community Detection, and Pathfinding using Neo4j GDS library.</p>
+                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-stars"></i></div>
+                        <h4>Recommendation Engines</h4>
+                        <p class="text-muted">Building real-time personalized recommendation systems based on user behavior and affinity maps.</p>
+                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="bi bi-brain"></i></div>
+                        <h4>Knowledge Graphs</h4>
+                        <p class="text-muted">Architecting intelligent knowledge ecosystems that connect siloed enterprise data points.</p>
+                        <a href="service-details.html" class="btn btn-link text-emerald p-0">Learn More <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 d-block" href="#">
+                        <i class="bi bi-diagram-3-fill"></i>
+                        NODALIS
+                    </a>
+                    <p class="text-muted">Premium Neo4j and knowledge graph consulting for data-driven enterprises. Transforming relationships into competitive advantages.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-github"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="text-white mb-4">Services</h5>
+                    <a href="services.html" class="footer-link">Graph Design</a>
+                    <a href="graph-algorithms.html" class="footer-link">Algorithms</a>
+                    <a href="services.html" class="footer-link">Architecture</a>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a href="about.html" class="footer-link">About Me</a>
+                    <a href="portfolio.html" class="footer-link">Portfolio</a>
+                    <a href="pricing.html" class="footer-link">Pricing</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p class="text-muted small">Stay updated with the latest in graph technology.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control bg-dark border-secondary text-white" placeholder="Email address">
+                        <button class="btn btn-primary-graph border-0"><i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-top border-secondary mt-5 pt-3 text-center">
+                <p class="text-muted small mb-0">&copy; 2026 Graph Intelligence. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
