@@ -725,8 +725,8 @@ a {
 }
 
 .orbit-1 { top: 5%; left: 0%; animation-delay: 0s; }
-.orbit-2 { top: 10%; right: 0%; animation-delay: 2s; }
-.orbit-3 { bottom: 10%; left: 5%; animation-delay: 4s; }
+.orbit-2 { top: 5%; right: -3%; animation-delay: 2s; }
+.orbit-3 { bottom: 5%; left: 0%; animation-delay: 4s; }
 .orbit-4 { bottom: 5%; right: 5%; animation-delay: 6s; }
 
 
