@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
     <style>
         .split-hero {
             min-height: 100vh;
@@ -31,10 +32,48 @@
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
             z-index: 1;
         }
-        @media (max-width: 991px) {
-            .hero-visual-panel {
+        [dir="rtl"] .hero-visual-panel {
+            right: auto;
+            left: 0;
+            clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+        @media (max-width: 1024px) {
+            .split-hero {
+                flex-direction: column;
+                justify-content: center;
+                padding-top: 120px;
+                padding-bottom: 3rem;
+                gap: 2rem;
+            }
+            .split-hero .container {
+                text-align: center;
+                margin-bottom: 0;
+            }
+            .split-hero .row {
+                justify-content: center;
+            }
+            .split-hero .col-lg-6 {
                 width: 100%;
-                opacity: 0.3;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .split-hero .d-flex {
+                justify-content: center;
+                width: 100%;
+            }
+            .hero-visual-panel {
+                position: relative;
+                width: calc(100% - 3rem);
+                margin: 0 auto;
+                border-radius: 24px;
+                height: 40vh;
+                min-height: 300px;
+                opacity: 1;
+                clip-path: none;
+                order: 2;
+            }
+            [dir="rtl"] .hero-visual-panel {
                 clip-path: none;
             }
         }
@@ -79,7 +118,7 @@
         <div class="container position-relative" style="z-index: 2;">
             <div class="row">
                 <div class="col-lg-6">
-                    <h1 class="display-2 text-white mb-4">Freelance <span class="text-gradient">Neo4j Consultant</span> & Graph Expert</h1>
+                    <h1 class="display-2 mb-4 theme-aware-text">Freelance <span class="text-gradient">Neo4j Consultant</span> & Graph Expert</h1>
                     <p class="lead text-muted mb-5">I deliver professional services to solve your hardest graph database problems. From Arrows.app graph modeling and Cypher query optimization to deploying real-time Neo4j knowledge graphs, I work independently to transform your connected data.</p>
                     <div class="d-flex gap-3">
                         <button class="btn-graph btn-primary-graph">Hire Me</button>

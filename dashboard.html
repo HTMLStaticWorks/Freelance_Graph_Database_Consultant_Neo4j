@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
     <style>
         .dashboard-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem; transition: var(--transition); }
         .dashboard-card:hover { border-color: var(--electric-emerald); }
@@ -106,29 +107,29 @@
                     <h2 class="text-white mb-4">Client Intelligence</h2>
                     <div class="row g-4 mb-5">
                         <div class="col-lg-3 col-md-6">
-                            <div class="dashboard-card">
+                            <div class="dashboard-card h-100">
                                 <small class="text-muted">TOTAL NODES</small>
                                 <h2 class="text-white mb-0">1.24M</h2>
                                 <div class="text-success small mt-2"><i class="bi bi-arrow-up"></i> 12% growth</div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
-                            <div class="dashboard-card">
+                            <div class="dashboard-card h-100">
                                 <small class="text-muted">RELATIONSHIPS</small>
                                 <h2 class="text-white mb-0">8.5M</h2>
                                 <div class="text-success small mt-2"><i class="bi bi-arrow-up"></i> 8% growth</div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
-                            <div class="dashboard-card">
+                            <div class="dashboard-card h-100">
                                 <small class="text-muted">AVG LATENCY</small>
                                 <h2 class="text-white mb-0">24ms</h2>
                                 <div class="text-emerald small mt-2">Stable performance</div>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
-                            <div class="dashboard-card">
-                                <small class="text-muted">MEMORY USAGE</small>
+                            <div class="dashboard-card h-100">
+                                <small class="text-muted">MEMORY USE</small>
                                 <h2 class="text-white mb-0">64%</h2>
                                 <div class="text-warning small mt-2">Optimized heap</div>
                             </div>
@@ -136,7 +137,7 @@
                     </div>
 
                     <div class="row g-4">
-                        <div class="col-lg-8">
+                        <div class="col-xl-8 col-lg-7">
                             <div class="dashboard-card h-100">
                                 <h5 class="text-white mb-4">Query Execution Timeline</h5>
                                 <div style="height: 300px; background: rgba(255,255,255,0.02); border-radius: 10px; display: flex; align-items: flex-end; padding: 20px; gap: 10px;">
@@ -150,30 +151,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-xl-4 col-lg-5">
                             <div class="dashboard-card h-100">
-                                <h5 class="text-white mb-4">Active Traversals</h5>
+                                <h5 class="text-white mb-4 text-start">Active Traversals</h5>
                                 <ul class="list-unstyled mb-0">
-                                    <li class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-2">
-                                        <div>
+                                    <li class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2 gap-3">
+                                        <div class="text-start">
                                             <div class="text-white small">Breadth-First Search</div>
                                             <div class="text-muted smaller">v2.4 cluster</div>
                                         </div>
-                                        <span class="badge bg-emerald">Running</span>
+                                        <span class="badge bg-emerald flex-shrink-0">Running</span>
                                     </li>
-                                    <li class="d-flex justify-content-between mb-3 border-bottom border-secondary pb-2">
-                                        <div>
+                                    <li class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2 gap-3">
+                                        <div class="text-start">
                                             <div class="text-white small">Shortest Path Discovery</div>
                                             <div class="text-muted smaller">v2.4 cluster</div>
                                         </div>
-                                        <span class="badge bg-teal">Pending</span>
+                                        <span class="badge bg-teal flex-shrink-0">Pending</span>
                                     </li>
-                                    <li class="d-flex justify-content-between">
-                                        <div>
+                                    <li class="d-flex justify-content-between align-items-center gap-3">
+                                        <div class="text-start">
                                             <div class="text-white small">Community Louvain</div>
                                             <div class="text-muted smaller">v1.2 replica</div>
                                         </div>
-                                        <span class="badge bg-secondary">Offline</span>
+                                        <span class="badge bg-secondary flex-shrink-0">Offline</span>
                                     </li>
                                 </ul>
                             </div>
@@ -232,7 +233,7 @@
                     <h3 class="text-white mb-4">Query Profiling</h3>
                     
                     <div class="row g-4">
-                        <div class="col-lg-8">
+                        <div class="col-xl-8 col-lg-7">
                             <div class="dashboard-card h-100">
                                 <h5 class="text-white mb-4">Live Query Log</h5>
                                 <div class="table-responsive">
@@ -281,7 +282,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-xl-4 col-lg-5">
                             <div class="dashboard-card h-100 d-flex flex-column">
                                 <h5 class="text-white mb-4">Resource Allocation</h5>
                                 
@@ -509,7 +510,7 @@
                 <section id="messages" class="dashboard-section d-none">
                     <h3 class="text-white mb-4">Client Messages</h3>
                     <div class="row g-4">
-                        <div class="col-lg-4">
+                        <div class="col-xl-4 col-lg-5">
                             <div class="dashboard-card h-100 p-0 overflow-hidden d-flex flex-column">
                                 <div class="p-3 border-bottom border-secondary bg-dark">
                                     <h6 class="text-white mb-0">Recent Conversations</h6>
@@ -539,7 +540,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-8">
+                        <div class="col-xl-8 col-lg-7">
                             <div class="dashboard-card h-100 d-flex flex-column p-0 border-0 overflow-hidden">
                                 <div class="p-3 border-bottom border-secondary bg-dark d-flex align-items-center gap-3">
                                     <img src="https://ui-avatars.com/api/?name=John+Doe&background=10b981&color=fff" class="rounded-circle" width="40">
@@ -620,11 +621,11 @@
                                 </div>
                                 <div class="row g-3 mb-4">
                                     <div class="col-6">
-                                        <label class="text-white mb-2">Max Pool Size</label>
+                                        <label class="text-white mb-2 text-nowrap">Max Pool Size</label>
                                         <input type="number" class="form-control bg-dark border-secondary text-white" value="100">
                                     </div>
                                     <div class="col-6">
-                                        <label class="text-white mb-2">Query Timeout (ms)</label>
+                                        <label class="text-white mb-2 text-nowrap">Query Timeout (ms)</label>
                                         <input type="number" class="form-control bg-dark border-secondary text-white" value="30000">
                                     </div>
                                 </div>
